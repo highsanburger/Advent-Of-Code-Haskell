@@ -1,36 +1,27 @@
 cabal-version:      2.4
 name:               advent-of-code
 version:            0.1.0.0
-
--- A short (one-line) description of the package.
--- synopsis:
-
--- A longer description of the package.
--- description:
-
--- A URL where users can report bugs.
--- bug-reports:
-
--- The license under which the package is released.
--- license:
 author:             Syed Khalid
-maintainer:         magmastar167@gmail.com
+maintainer:         imsyedkhalid@gmail.com
 
--- A copyright notice.
--- copyright:
--- category:
 extra-source-files:
-    CHANGELOG.md
     README.md
 
 executable advent-of-code
     main-is:          Main.hs
 
-    -- Modules included in this executable, other than Main.
-    -- other-modules:
+    other-modules:   
+                      Y23.D01.P1 , Y23.D01.P2
+                      Y23.D02.P1 , Y23.D02.P2
+                      Y23.D03.P1 , Y23.D03.P2
+                      Y23.D04.P1 , Y23.D04.P2
+                      Y23.D05.P1 , Y23.D05.P2
+                      Y23.D06.P1 , Y23.D06.P2
+                      Y23.D07.P1 , Y23.D07.P2
+                      Y23.D08.P1 , Y23.D08.P2
+                      Y23.D09.P1 , Y23.D09.P2
+                      Y23.D10.P1 , Y23.D10.P2
 
-    -- LANGUAGE extensions used by modules in this package.
-    -- other-extensions:
-    build-depends:    base ^>=4.19.0.0,text,vector
-    hs-source-dirs:   app
+    build-depends:    base ^>=4.17.2.0, haskell-say,text,vector
+    hs-source-dirs:   src
     default-language: Haskell2010
