@@ -16,24 +16,22 @@ numWin winning have = length $ filter id bs
   where
     bs = maskAll winning have
 
-a :: [(Int, Int, Int)] -> (Int, Int, Int) -> [(Int, Int, Int)]
-a rec (id, numWin, numCards) =
-  takeWhile (\(x, y, z) -> x <= id) rec
-    ++ map (\(x, y, z) -> (x, y, z + numCards)) (takeWhile (\(x, y, z) -> x <= id + numWin) $ dropWhile (\(x, y, z) -> x <= id) rec)
-    ++ dropWhile (\(x, y, z) -> x <= numWin + id) rec
+update :: [(Int, Int, Int)] -> (Int, Int, Int) -> [(Int, Int, Int)]
+update cs (id, win, num) = map (\(a, b, c) -> (a, b, c + num)) copies ++ rest
+  where
+    copies = filter (\(a, b, c) -> (a <= id + win) && (id < a)) cs
+    rest = filter (\(a, b, c) -> a > id + win) cs
 
-rtj :: ([(Int, Int, Int)] -> (Int, Int, Int) -> [(Int, Int, Int)]) -> [(Int, Int, Int)] -> Int -> [(Int, Int, Int)]
-rtj a r 0 = a r $ head r
-rtj a r n = a (rtj a r (n - 1)) $ rtj a r (n - 1) !! n
+curse :: [(Int, Int, Int)] -> [(Int, Int, Int)]
+curse [] = []
+curse (c : cs) = c : curse (update cs c)
 
 sumRec :: [(Int, Int, Int)] -> Int
 sumRec [] = 0
 sumRec ((x, y, z) : rs) = z + sumRec rs
 
 solve2 :: String -> Int
-solve2 inp = sumRec $ rtj a rec (length rec - 1)
-  where
-    rec = map ((\(id, win, hav, num) -> (id, numWin win hav, num)) . parse2) (lines inp)
+solve2 inp = sumRec $ curse $ map ((\(id, win, hav, num) -> (id, numWin win hav, num)) . parse2) $ lines inp
 
 main2 :: IO ()
 main2 = do
