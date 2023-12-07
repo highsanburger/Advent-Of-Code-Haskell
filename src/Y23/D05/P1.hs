@@ -7,11 +7,18 @@ import qualified Data.Maybe as M
 import qualified Data.Text as T
 import qualified Data.Vector as V
 
-solve :: String -> Int
-solve inp = undefined
+initial :: String -> [Int]
+initial inp = map read $ tail $ words $ head $ lines inp
+
+-- parse :: String ->
+
+-- solve :: String -> Int
+-- solve inp = undefined
 
 main :: IO ()
 main = do
   -- input <- readFile "src/Y23/D05/input.txt"
   input <- readFile "src/Y23/D05/example.txt"
-  print $ solve input
+  print $ initial input
+
+-- print $ solve input
