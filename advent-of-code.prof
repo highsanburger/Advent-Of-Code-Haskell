@@ -1,0 +1,106 @@
+	Fri Dec 15 10:39 2023 Time and Allocation Profiling Report  (Final)
+
+	   advent-of-code +RTS -p -RTS
+
+	total time  =        0.10 secs   (98 ticks @ 1000 us, 1 processor)
+	total alloc =     741,680 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE           SRC                               %time %alloc
+
+main2       Y23.D05.P2       src/Y23/D05/P2.hs:(63,1)-(69,67)   98.0    7.7
+parseOnce   Y23.D05.P2       src/Y23/D05/P2.hs:25:1-71           1.0   30.3
+humiLocn    Y23.D05.P2       src/Y23/D05/P2.hs:46:1-51           1.0    2.3
+CAF         GHC.IO.Handle.FD <entire-module>                     0.0    4.7
+watrLite    Y23.D05.P2       src/Y23/D05/P2.hs:37:1-51           0.0    4.3
+tempHumi    Y23.D05.P2       src/Y23/D05/P2.hs:43:1-51           0.0    4.4
+soilFert    Y23.D05.P2       src/Y23/D05/P2.hs:31:1-51           0.0    3.2
+seedSoil    Y23.D05.P2       src/Y23/D05/P2.hs:28:1-51           0.0    3.2
+ranges      Y23.D05.P2       src/Y23/D05/P2.hs:(21,1)-(22,20)    0.0   18.3
+parse       Y23.D05.P2       src/Y23/D05/P2.hs:7:1-47            0.0    5.9
+liteTemp    Y23.D05.P2       src/Y23/D05/P2.hs:40:1-51           0.0    3.4
+initial     Y23.D05.P2       src/Y23/D05/P2.hs:10:1-96           0.0    5.4
+fertWatr    Y23.D05.P2       src/Y23/D05/P2.hs:34:1-51           0.0    3.9
+
+
+                                                                                                                       individual      inherited
+COST CENTRE             MODULE                    SRC                                               no.     entries  %time %alloc   %time %alloc
+
+MAIN                    MAIN                      <built-in>                                        229           0    0.0    0.1   100.0  100.0
+ CAF                    Y23.D05.P2                <entire-module>                                   448           0    0.0    0.2     0.0    0.2
+  main2                 Y23.D05.P2                src/Y23/D05/P2.hs:(63,1)-(69,67)                  459           1    0.0    0.0     0.0    0.0
+ CAF                    Main                      <entire-module>                                   447           0    0.0    0.0     0.0    0.0
+  main                  Main                      src/Main.hs:8:1-12                                458           1    0.0    0.0     0.0    0.0
+ CAF                    Data.List.Split.Internals <entire-module>                                   402           0    0.0    0.0     0.0    0.0
+  defaultSplitter       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(55,1)-(62,5)    469           1    0.0    0.0     0.0    0.0
+  splitWhen             Data.List.Split.Internals src/Data/List/Split/Internals.hs:485:1-40         462           1    0.0    0.0     0.0    0.0
+ CAF                    GHC.Conc.Signal           <entire-module>                                   345           0    0.0    0.1     0.0    0.1
+ CAF                    GHC.IO.Encoding           <entire-module>                                   328           0    0.0    0.4     0.0    0.4
+ CAF                    GHC.IO.Encoding.Iconv     <entire-module>                                   326           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Exception          <entire-module>                                   318           0    0.0    0.1     0.0    0.1
+ CAF                    GHC.IO.Handle.FD          <entire-module>                                   316           0    0.0    4.7     0.0    4.7
+ CAF                    GHC.IO.FD                 <entire-module>                                   315           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.IO.Handle.Internals   <entire-module>                                   314           0    0.0    0.0     0.0    0.0
+ CAF                    GHC.Read                  <entire-module>                                   297           0    0.0    0.0     0.0    0.0
+ main2                  Y23.D05.P2                src/Y23/D05/P2.hs:(63,1)-(69,67)                  460           0   98.0    7.7   100.0   94.4
+  initRange             Y23.D05.P2                src/Y23/D05/P2.hs:(13,1)-(15,25)                  486           6    0.0    0.6     0.0    0.6
+  corresponds           Y23.D05.P2                src/Y23/D05/P2.hs:52:1-192                        487           2    0.0    0.1     1.0   43.1
+   tally                Y23.D05.P2                src/Y23/D05/P2.hs:49:1-47                         488         378    0.0    0.0     0.0    0.0
+   fertWatr             Y23.D05.P2                src/Y23/D05/P2.hs:34:1-51                         518           2    0.0    3.9     0.0    6.6
+    ranges              Y23.D05.P2                src/Y23/D05/P2.hs:(21,1)-(22,20)                  519           8    0.0    2.7     0.0    2.7
+   humiLocn             Y23.D05.P2                src/Y23/D05/P2.hs:46:1-51                         526           2    1.0    2.3     1.0    4.1
+    ranges              Y23.D05.P2                src/Y23/D05/P2.hs:(21,1)-(22,20)                  527           4    0.0    1.8     0.0    1.8
+   liteTemp             Y23.D05.P2                src/Y23/D05/P2.hs:40:1-51                         522           2    0.0    3.4     0.0    5.9
+    ranges              Y23.D05.P2                src/Y23/D05/P2.hs:(21,1)-(22,20)                  523           6    0.0    2.5     0.0    2.5
+   seedSoil             Y23.D05.P2                src/Y23/D05/P2.hs:28:1-51                         489           2    0.0    3.2     0.0    5.4
+    ranges              Y23.D05.P2                src/Y23/D05/P2.hs:(21,1)-(22,20)                  514           4    0.0    2.2     0.0    2.2
+   soilFert             Y23.D05.P2                src/Y23/D05/P2.hs:31:1-51                         516           2    0.0    3.2     0.0    5.6
+    ranges              Y23.D05.P2                src/Y23/D05/P2.hs:(21,1)-(22,20)                  517           6    0.0    2.4     0.0    2.4
+   tempHumi             Y23.D05.P2                src/Y23/D05/P2.hs:43:1-51                         524           2    0.0    4.4     0.0    7.6
+    ranges              Y23.D05.P2                src/Y23/D05/P2.hs:(21,1)-(22,20)                  525           4    0.0    3.1     0.0    3.1
+   watrLite             Y23.D05.P2                src/Y23/D05/P2.hs:37:1-51                         520           2    0.0    4.3     0.0    7.8
+    ranges              Y23.D05.P2                src/Y23/D05/P2.hs:(21,1)-(22,20)                  521           4    0.0    3.5     0.0    3.5
+  initial               Y23.D05.P2                src/Y23/D05/P2.hs:10:1-96                         461           2    0.0    5.4     0.0    5.7
+   splitWhen            Data.List.Split.Internals src/Data/List/Split/Internals.hs:485:1-40         463           0    0.0    0.0     0.0    0.2
+    dropDelims          Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         470           2    0.0    0.0     0.0    0.0
+    split               Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         464           2    0.0    0.1     0.0    0.2
+     delimiter          Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          474           2    0.0    0.0     0.0    0.0
+     fromElem           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 485           2    0.0    0.0     0.0    0.0
+     postProcess        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 465           2    0.0    0.1     0.0    0.1
+      condensePolicy    Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          472           2    0.0    0.0     0.0    0.0
+      delimPolicy       Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          467           2    0.0    0.0     0.0    0.0
+      doCondense        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 471           2    0.0    0.0     0.0    0.0
+      doDrop            Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 480           2    0.0    0.0     0.0    0.0
+      doMerge           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 466           2    0.0    0.0     0.0    0.0
+      dropFinal         Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 483           2    0.0    0.0     0.0    0.0
+      dropInitial       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 481           2    0.0    0.0     0.0    0.0
+      finalBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          484           2    0.0    0.0     0.0    0.0
+      initBlankPolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          482           2    0.0    0.0     0.0    0.0
+      insertBlanks      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 478           2    0.0    0.0     0.0    0.0
+       insertBlanks'    Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 479           2    0.0    0.0     0.0    0.0
+     splitInternal      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 473           2    0.0    0.0     0.0    0.1
+      breakDelim        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 475           2    0.0    0.0     0.0    0.0
+       matchDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   476           2    0.0    0.0     0.0    0.0
+    whenElt             Data.List.Split.Internals src/Data/List/Split/Internals.hs:307:1-55         468           2    0.0    0.0     0.0    0.0
+  parseOnce             Y23.D05.P2                src/Y23/D05/P2.hs:25:1-71                         490           1    1.0   30.3     1.0   37.4
+   parse                Y23.D05.P2                src/Y23/D05/P2.hs:7:1-47                          491           1    0.0    5.9     0.0    7.1
+    splitWhen           Data.List.Split.Internals src/Data/List/Split/Internals.hs:485:1-40         492           0    0.0    0.0     0.0    1.2
+     dropDelims         Data.List.Split.Internals src/Data/List/Split/Internals.hs:320:1-37         498           1    0.0    0.0     0.0    0.0
+     split              Data.List.Split.Internals src/Data/List/Split/Internals.hs:262:1-68         493           1    0.0    0.1     0.0    1.2
+      splitInternal     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(147,1)-(156,71) 501           8    0.0    0.2     0.0    0.8
+       breakDelim       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(159,1)-(164,34) 503          34    0.0    0.5     0.0    0.6
+        matchDelim      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(72,1)-(76,23)   504          40    0.0    0.1     0.0    0.1
+      fromElem          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(124,1)-(125,24) 513           7    0.0    0.0     0.0    0.0
+      delimiter         Data.List.Split.Internals src/Data/List/Split/Internals.hs:22:5-13          502           1    0.0    0.0     0.0    0.0
+      postProcess       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(171,1)-(177,35) 494           1    0.0    0.0     0.0    0.2
+       condensePolicy   Data.List.Split.Internals src/Data/List/Split/Internals.hs:29:5-18          500           1    0.0    0.0     0.0    0.0
+       delimPolicy      Data.List.Split.Internals src/Data/List/Split/Internals.hs:24:5-15          496           1    0.0    0.0     0.0    0.0
+       doCondense       Data.List.Split.Internals src/Data/List/Split/Internals.hs:(187,1)-(194,20) 499           1    0.0    0.0     0.0    0.0
+       doDrop           Data.List.Split.Internals src/Data/List/Split/Internals.hs:(181,1)-(182,14) 508           1    0.0    0.1     0.0    0.1
+       doMerge          Data.List.Split.Internals src/Data/List/Split/Internals.hs:(216,1)-(218,14) 495           1    0.0    0.0     0.0    0.0
+       dropFinal        Data.List.Split.Internals src/Data/List/Split/Internals.hs:(248,1)-(254,17) 511           1    0.0    0.0     0.0    0.0
+       dropInitial      Data.List.Split.Internals src/Data/List/Split/Internals.hs:(243,1)-(244,19) 509           1    0.0    0.0     0.0    0.0
+       finalBlankPolicy Data.List.Split.Internals src/Data/List/Split/Internals.hs:34:5-20          512           1    0.0    0.0     0.0    0.0
+       initBlankPolicy  Data.List.Split.Internals src/Data/List/Split/Internals.hs:32:5-19          510           1    0.0    0.0     0.0    0.0
+       insertBlanks     Data.List.Split.Internals src/Data/List/Split/Internals.hs:(200,1)-(202,38) 506           1    0.0    0.0     0.0    0.1
+        insertBlanks'   Data.List.Split.Internals src/Data/List/Split/Internals.hs:(206,1)-(212,49) 507          15    0.0    0.1     0.0    0.1
+     whenElt            Data.List.Split.Internals src/Data/List/Split/Internals.hs:307:1-55         497           1    0.0    0.0     0.0    0.0
