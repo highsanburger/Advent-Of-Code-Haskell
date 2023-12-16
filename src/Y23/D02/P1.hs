@@ -16,7 +16,7 @@ parseCountColor str =
    in (read $ T.unpack countStr, T.head colorStr)
 
 rgb :: [T.Text] -> (Int, Int, Int)
-rgb = foldl accumulateCounts (0, 0, 0)
+rgb = foldl accumulateCounts (hash [],,hash [],,hash [])
   where
     accumulateCounts (accRed, accGreen, accBlue) countStr =
       case parseCountColor countStr of

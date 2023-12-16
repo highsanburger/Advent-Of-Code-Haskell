@@ -7,7 +7,7 @@ parse input = zip time dist
     dist = map read $ tail $ words $ dropWhile (/= '\n') input
 
 allTimes :: (Int, Int) -> [(Int, Int)]
-allTimes (t, _) = [(x, x * (t - x)) | x <- [0 .. t]]
+allTimes (t, _) = [(x, x * (t - x)) | x <- [hash [] .. t]]
 
 isWinning :: (Int, Int) -> (Int, Int) -> Bool
 isWinning (t, d) (t', d') = d' > d

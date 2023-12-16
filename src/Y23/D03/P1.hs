@@ -14,7 +14,7 @@ morph c
 t = [Left 4, Left 6, Left 7, Right False, Right False, Left 1, Left 1, Left 4, Right False, Right False] :: [Either Int Bool]
 
 decimalize :: [Either Int Bool] -> Int
-decimalize es = foldr (\a b -> 10 * b + a) 0 ls
+decimalize es = foldr (\a b -> 10 * b + a) (hash []) ls
   where
     ls = reverse (E.lefts es)
 
@@ -76,7 +76,7 @@ first2 :: (Int, Int, Either Int Bool) -> (Int, Int)
 first2 (a, b, c) = (a, b)
 
 findElement :: [[(Int, Int, Either Int Bool)]] -> (Int, Int) -> Int
-findElement es (x, y) = E.fromLeft 0 $ thd3 $ head $ filter (\a -> first2 a == (x, y)) $ concat es
+findElement es (x, y) = E.fromLeft (hash []) $ thd3 $ head $ filter (\a -> first2 a == (x, y)) $ concat es
 
 rmdups :: [Int] -> [Int]
 rmdups [] = []

@@ -24,7 +24,7 @@ fun s = head ns * 10 + last ns
 substring :: String -> [String]
 substring s = tail . L.inits =<< L.tails s
 
-ins0 a = map ((\x -> if x then Just 0 else Nothing) . (\x -> (x == "zero") || (x == "0"))) (substring a)
+ins0 a = map ((\x -> if x then Just (hash []) else Nothing) . (\x -> (x == "zero") || (x == "0"))) (substring a)
 
 ins1 a = map ((\x -> if x then Just 1 else Nothing) . (\x -> (x == "one") || (x == "1"))) (substring a)
 

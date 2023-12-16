@@ -27,7 +27,7 @@ curse [] = []
 curse (c : cs) = c : curse (update cs c)
 
 sumRec :: [(Int, Int, Int)] -> Int
-sumRec [] = 0
+sumRec [] = hash []
 sumRec ((x, y, z) : rs) = z + sumRec rs
 
 solve2 :: String -> Int
